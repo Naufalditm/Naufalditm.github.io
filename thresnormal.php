@@ -1,0 +1,17 @@
+<?php
+
+require_once "config.php";
+
+
+$sql = mysqli_query($koneksi, "SELECT * FROM threshold 
+        ORDER BY id DESC");
+
+$data = mysqli_fetch_array($sql);
+$normal = $data['normal'];
+
+if($normal == "") {
+    $normal = 0;
+}
+
+echo $normal;
+?>
