@@ -38,6 +38,7 @@
                 $("#cekkelembapanu").load("lembabudara.php");
                 $("#cekkelembapant").load("lembabtanah.php");
                 $("#keterangan").load("keterangan.php");
+                $("#cuaca").load("cuaca.php");
 
                 $("#siramo").load("thressiramo.php");
                 $("#tanahk").load("threstanahk.php");
@@ -65,69 +66,160 @@
             </div>
         </div>
         
-        
 
-        <div style="display: flex;">
-            <!-- Menampilkan nilai Suhu -->
-            <div class="card text-center" style="width: 25%;">
-                <div class="card-header" 
-                    style="font-size: 20px; 
-                    font-weight: bold;
-                    color: white;
-                    background-color: forestgreen;">
-                    Suhu Udara
-                </div> 
-                <div class="card-body">
-                    <h3> <span id="ceksuhu"> 0 </span>°C</h3>
+        <!-- Pemisah -->
+        <h4 class="text-nowrap">TABEL MONITORING SUHU UDARA</h4>
+        <div class="row mb-4" style="display: flex;">
+            <div class="col">
+                <!-- Menampilkan nilai Suhu -->
+                <div class="card text-center">
+                    <div class="card-header" 
+                        style="font-size: 20px; 
+                        font-weight: bold;
+                        color: white;
+                        background-color: forestgreen;">
+                        Suhu Udara
+                    </div> 
+                    <div class="card-body">
+                        <h3> <span id="ceksuhu"> 0 </span>°C</h3>
+                    </div>
                 </div>
             </div>
-
-            <!-- Menampilkan nilai Kelembapan Udara -->
-            <div class="card text-center" style="width: 25%;">
-                <div class="card-header" 
-                    style="font-size: 20px; 
-                    font-weight: bold;
-                    background-color:dodgerblue;
-                    color: white;">
-                    Kelembapan Udara
-                </div>
-                <div class="card-body">
-                    <h3> <span id="cekkelembapanu"> 0 </span>%</h3>
-                </div>
-            </div>
-
-            <!-- Menampilkan nilai Kelembapan Tanah -->
-            <div class="card text-center" style="width: 25%;">
-                <div class="card-header" 
-                    style="font-size: 20px; 
-                    font-weight: bold;
-                    color: white;
-                    background-color: firebrick;">
-                    Kelembapan Tanah
-                </div>
-                <div class="card-body">
-                    <h3> <span id="cekkelembapant"> 0 </span> </h3>
+            <div class="col">
+                <!-- Menampilkan nilai Kelembapan Udara -->
+                <div class="card text-center">
+                    <div class="card-header" 
+                        style="font-size: 20px; 
+                        font-weight: bold;
+                        background-color:dodgerblue;
+                        color: white;">
+                        Kelembapan Udara
+                    </div>
+                    <div class="card-body">
+                        <h3> <span id="cekkelembapanu"> 0 </span>%RH</h3>
+                    </div>
                 </div>
             </div>
-
-            <!-- Menampilkan nilai Keterangan -->
-            <div class="card text-center" style="width: 25%;">
-                <div class="card-header" 
-                    style="font-size: 20px; 
-                    font-weight: bold;
-                    color: white;
-                    background-color: #495057;">
-                    Keterangan
-                </div>
-                <div class="card-body">
-                    <h4><b id="keterangan">NULL</b></h4>
+            <div class="col">
+                <!-- Menampilkan nilai Keterangan -->
+                <div class="card text-center">
+                    <div class="card-header" 
+                        style="font-size: 20px; 
+                        font-weight: bold;
+                        color: white;
+                        background-color: #495057;">
+                        Kondisi Cuaca
+                    </div>
+                    <div class="card-body">
+                        <h4><b id="cuaca"> 0 </b></h4>
+                    </div>
                 </div>
             </div>
         </div>
 
+<br><br>
+        <h4 class="text-nowrap">TABEL MONITORING KELEMBAPAN TANAH</h4>
+        <div class="row" style="display: flex;">
+            <div class="col">
+                <!-- Menampilkan nilai Kelembapan Tanah -->
+                <div class="card text-center">
+                    <div class="card-header" 
+                        style="font-size: 20px; 
+                        font-weight: bold;
+                        color: white;
+                        background-color: firebrick;">
+                        Kelembapan Tanah
+                    </div>
+                    <div class="card-body">
+                        <h3> <span id="cekkelembapant"> 0 </span>(Pa)</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <!-- Menampilkan nilai Keterangan -->
+                <div class="card text-center">
+                    <div class="card-header" 
+                        style="font-size: 20px; 
+                        font-weight: bold;
+                        color: white;
+                        background-color: #495057;">
+                        Keterangan
+                    </div>
+                    <div class="card-body">
+                        <h4><b id="keterangan">NULL</b></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        
         <!-- Keterangan Kelembapan Tanah -->
         <div class="container" style="margin-top: 40px;">
             <div class="row">
+            <div class="col">
+                    <h6 style="color: red;"><b>KETERANGAN KONDISI CUACA</b></h6><br>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+
+                            </div>
+                            <div class="col-mr-6 col-ml-8">
+                            <table>
+                            <tr>
+                                <td>
+                                    <h7 style="color: red;">>=
+                                    <h7 style="color: red;">32°C</h7>
+                                </h7>
+                                </td>
+                                <td>=</td>
+                                <td>
+                                    <h7 style="color: red;"><b>CUACA PANAS</b></h7>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h7 style="color: red;">>=
+                                    <h7 style="color: red;">27°C</h7>
+                                </h7>
+                                </td>
+                                <td>=</td>
+                                <td>
+                                    <h7 style="color: red;"><b>CUACA NORMAL</b></h7>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h7 style="color: red;">>=
+                                    <h7 style="color: red;">24°C</h7>
+                                </h7>
+                                </td>
+                                <td>=</td>
+                                <td>
+                                    <h7 style="color: red;"><b>CUACA SEJUK</b></h7>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h7 style="color: red;"><
+                                        <h7 style="color: red;">24°C</h7>
+                                    </h7>
+                                </td>
+                                <td>=</td>
+                                <td>
+                                    <h7 style="color: red;"><b>CUACA DINGIN</b></h7>
+                                </td>
+                            </tr>
+                        </table>
+                            </div>
+                            <div class="col">
+
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
                 <div class="col">
                     <h6 style="color: red;"><b>KETERANGAN KELEMBAPAN TANAH</b></h6><br>
                     <div class="container">
@@ -140,7 +232,7 @@
                             <tr>
                                 <td>
                                     <h7 style="color: red;">>=
-                                    <h7 id="siramo" style="color: red;"></h7>
+                                    <h7 id="siramo" style="color: red;"></h7>(Pa)
                                 </h7>
                                 </td>
                                 <td>=</td>
@@ -151,7 +243,7 @@
                             <tr>
                                 <td>
                                     <h7 style="color: red;">>=
-                                    <h7 id="tanahk" style="color: red;"></h7>
+                                    <h7 id="tanahk" style="color: red;"></h7>(Pa)
                                 </h7>
                                 </td>
                                 <td>=</td>
@@ -162,7 +254,7 @@
                             <tr>
                                 <td>
                                     <h7 style="color: red;">>=
-                                    <h7 id="normal" style="color: red;"></h7>
+                                    <h7 id="normal" style="color: red;"></h7>(Pa)
                                 </h7>
                                 </td>
                                 <td>=</td>
@@ -173,7 +265,7 @@
                             <tr>
                                 <td>
                                     <h7 style="color: red;"><
-                                        <h7 id="normall" style="color: red;"></h7>
+                                        <h7 id="normall" style="color: red;"></h7>(Pa)
                                     </h7>
                                 </td>
                                 <td>=</td>
@@ -190,6 +282,7 @@
                         
                     </div>
                 </div>
+                
             </div>
             
         </div>
